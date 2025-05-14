@@ -2,6 +2,7 @@ import { Dispatch, ReactElement, SetStateAction, useRef } from 'react';
 import styles from './styles.module.scss';
 import { gsap } from 'gsap';
 import clsx from 'clsx';
+import './style.css';
 
 const CircleAnimation = ({
   arrLength,
@@ -42,7 +43,7 @@ const CircleAnimation = ({
               }}
               onClick={() => handleClick(index)}
             >
-              {index === currentPeriod && <span>{index + 1}</span>}
+              <span className={clsx(styles.circle_number, { opacity: index === currentPeriod })}>{index + 1}</span>
             </div>
           );
         })}
