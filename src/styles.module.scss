@@ -35,6 +35,17 @@
   z-index: -10;
 }
 
+.main__circle {
+  position: absolute;
+  top: 215px;
+  left: calc(100% / 2 - 268px);
+  width: 536px;
+  height: 536px;
+  border-radius: 50%;
+  border: 1px #edf0f3 solid;
+  z-index: -10;
+}
+
 .controls {
   display: flex;
   flex-direction: column;

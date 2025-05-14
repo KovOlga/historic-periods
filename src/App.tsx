@@ -6,6 +6,7 @@ import { mockData } from './utils/mock';
 import Slider from './components/slider';
 import { LeftArrowIcon, RightArrowIcon } from './assets/icons';
 import { formatPeriod } from './utils/format';
+import CircleAnimation from './components/circleAnimation';
 
 function App(): ReactElement {
   const [currentPeriod, setCurrentPeriod] = useState(0);
@@ -26,6 +27,8 @@ function App(): ReactElement {
     <main className={styles.main}>
       <div className={styles.main__x} />
       <div className={styles.main__y} />
+      <div className={styles.main__circle} />
+      <CircleAnimation setCurrentPeriod={setCurrentPeriod} currentPeriod={currentPeriod} arrLength={mockData.length} />
       <Title />
       <Period currentPeriod={mockData[currentPeriod].period} />
       <div className={styles.controls}>
