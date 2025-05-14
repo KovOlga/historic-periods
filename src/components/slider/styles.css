@@ -1,6 +1,7 @@
-.swiperr {
+.slider {
   position: relative;
   overflow-x: visible;
+  margin-top: 56px;
 }
 .navigation {
   width: 40px;

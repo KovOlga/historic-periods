@@ -12,7 +12,7 @@ function Slider({ datesArr }: ISliderProps): ReactElement {
   const [, setInit] = useState<boolean>(false);
 
   return (
-    <div className="swiperr">
+    <div className="slider">
       <Swiper
         slidesPerView="auto"
         // breakpoints={{

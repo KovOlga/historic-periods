@@ -23,7 +23,7 @@ function App(): ReactElement {
     }
   };
   return (
-    <main className={styles.container}>
+    <main className={styles.main}>
       <Title />
       <Period currentPeriod={mockData[currentPeriod].period} />
       <div className={styles.controls}>

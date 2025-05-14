@@ -4,6 +4,11 @@
   font-weight: 700;
   font-size: 56px;
   line-height: 73px;
+  width: 973px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: center;
   @media (min-width: 1440px) {
     font-size: 200px;
     line-height: 160px;
