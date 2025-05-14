@@ -17,6 +17,31 @@
   }
 }
 
+.swiper-slide {
+  width: auto;
+}
+
 .swiper-custom-bullet.swiper-custom-bullet-active {
   background-color: #0a0909;
+}
+.slide {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.slide__date {
+  margin: 0;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  color: #3877ee;
+}
+
+.slide__content {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  margin: 0;
 }

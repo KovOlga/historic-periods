@@ -10,34 +10,29 @@ function Slider({ datesArr }: ISliderProps): ReactElement {
   return (
     <div>
       <Swiper
-        slidesPerView={1.1}
-        breakpoints={{
-          1024: {
-            slidesPerView: 1,
-          },
-        }}
-        spaceBetween="8px"
-        centeredSlides
-        pagination={{
-          type: 'bullets',
-          bulletClass: 'swiper-custom-bullet',
-          bulletActiveClass: 'swiper-custom-bullet-active',
-          clickable: true,
-        }}
+        slidesPerView="auto"
+        // breakpoints={{
+        //   1024: {
+        //     slidesPerView: 1,
+        //   },
+        // }}
+        spaceBetween="80px"
+        // pagination={{
+        //   type: 'bullets',
+        //   bulletClass: 'swiper-custom-bullet',
+        //   bulletActiveClass: 'swiper-custom-bullet-active',
+        //   clickable: true,
+        // }}
         className="mySwiper"
         modules={[Pagination]}
       >
         {datesArr.map((item, index) => {
           return (
             <SwiperSlide key={index}>
-              {/* <div className="relative box-border h-[328px] w-full md:h-[400px] lg:h-[496px] xl:h-[656px]">
-                <Image
-                  src={`https://${process.env.NEXT_PUBLIC_HOST_NAME}/uploads/${userType}/gallery/${userId}/${item}`}
-                  alt={`Фото ${index + 1}`}
-                  fill
-                  className="rounded-[5px] object-cover"
-                />
-              </div> */}
+              <div className="slide">
+                <p className="slide__date">{item.date}</p>
+                <p className="slide__content">{item.content}</p>
+              </div>
             </SwiperSlide>
           );
         })}
