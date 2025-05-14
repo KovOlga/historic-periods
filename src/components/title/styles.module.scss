@@ -5,8 +5,10 @@
   color: #42567a;
   margin: 0;
   padding-bottom: 96px;
+  display: block;
   @media (min-width: 1440px) {
     font-size: 56px;
     line-height: 67px;
+    width: 353px;
   }
 }

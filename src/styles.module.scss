@@ -5,13 +5,34 @@
   display: flex;
   flex-direction: column;
   min-height: calc(100dvh + 1px);
+  position: relative;
   @media (min-width: 1440px) {
     font-size: 56px;
     line-height: 67px;
-    border-right: 1px #c7cdd9 solid;
-    border-left: 1px #c7cdd9 solid;
+    border-right: 1px #edf0f3 solid;
+    border-left: 1px #edf0f3 solid;
     padding: 170px 160px 104px 80px;
   }
+}
+
+.main__x {
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  left: 0;
+  top: 480px;
+  background-color: #edf0f3;
+  z-index: -10;
+}
+
+.main__y {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  left: calc(100% / 2);
+  top: 0;
+  background-color: #edf0f3;
+  z-index: -10;
 }
 
 .controls {

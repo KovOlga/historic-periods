@@ -24,6 +24,8 @@ function App(): ReactElement {
   };
   return (
     <main className={styles.main}>
+      <div className={styles.main__x} />
+      <div className={styles.main__y} />
       <Title />
       <Period currentPeriod={mockData[currentPeriod].period} />
       <div className={styles.controls}>
