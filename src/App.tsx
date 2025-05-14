@@ -10,13 +10,13 @@ import { formatPeriod } from './utils/format';
 function App(): ReactElement {
   const [currentPeriod, setCurrentPeriod] = useState(0);
 
-  const handleChangePeriod = (type: 'asc' | 'desc'): void => {
+  const handleChangePeriod = (type: 'incr' | 'decr'): void => {
     switch (type) {
-      case 'asc': {
+      case 'incr': {
         setCurrentPeriod((prev) => prev + 1);
         break;
       }
-      case 'desc': {
+      case 'decr': {
         setCurrentPeriod((prev) => prev - 1);
         break;
       }
@@ -31,11 +31,11 @@ function App(): ReactElement {
           {formatPeriod(currentPeriod + 1)}/{formatPeriod(mockData.length)}
         </p>
         <div className={styles.btns}>
-          <button onClick={() => handleChangePeriod('desc')} disabled={!currentPeriod} className={styles.btn}>
+          <button onClick={() => handleChangePeriod('decr')} disabled={!currentPeriod} className={styles.btn}>
             <LeftArrowIcon color="#42567A" disabled={!currentPeriod} />
           </button>
           <button
-            onClick={() => handleChangePeriod('asc')}
+            onClick={() => handleChangePeriod('incr')}
             disabled={currentPeriod === mockData.length - 1}
             className={styles.btn}
           >
