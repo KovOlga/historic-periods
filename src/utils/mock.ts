@@ -1,7 +1,6 @@
 export const mockData = [
   {
-    start: 1992,
-    end: 1997,
+    period: { start: 1992, end: 1997 },
     dates: [
       {
         date: 1992,
@@ -22,8 +21,7 @@ export const mockData = [
     ],
   },
   {
-    start: 1999,
-    end: 2004,
+    period: { start: 1999, end: 2004 },
     dates: [
       {
         date: 1999,

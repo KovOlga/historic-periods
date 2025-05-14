@@ -1,0 +1,19 @@
+.period {
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 73px;
+  @media (min-width: 1024px) {
+    font-size: 200px;
+    line-height: 160px;
+  }
+}
+
+.start {
+  color: #3877ee;
+}
+
+.end {
+  color: #ef5da8;
+}
