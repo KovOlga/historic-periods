@@ -32,14 +32,14 @@ function App(): ReactElement {
         </p>
         <div className={styles.btns}>
           <button onClick={() => handleChangePeriod('desc')} disabled={!currentPeriod} className={styles.btn}>
-            <LeftArrowIcon disabled={!currentPeriod} />
+            <LeftArrowIcon color="#42567A" disabled={!currentPeriod} />
           </button>
           <button
             onClick={() => handleChangePeriod('asc')}
             disabled={currentPeriod === mockData.length - 1}
             className={styles.btn}
           >
-            <RightArrowIcon disabled={currentPeriod === mockData.length - 1} />
+            <RightArrowIcon color="#42567A" disabled={currentPeriod === mockData.length - 1} />
           </button>
         </div>
       </div>

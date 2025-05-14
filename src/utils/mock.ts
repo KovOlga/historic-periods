@@ -16,8 +16,12 @@ export const mockData = [
         content: 'Компания Tesla официально представила первый в мире электрический грузовик Tesla Semi',
       },
       {
-        date: 1997,
+        date: 1996,
         content: 'lorem',
+      },
+      {
+        date: 1997,
+        content: 'Компания Tesla официально представила первый в мире электрический грузовик Tesla Semi',
       },
     ],
   },

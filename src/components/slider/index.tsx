@@ -1,18 +1,22 @@
-import { ReactElement } from 'react';
-import { Pagination } from 'swiper/modules';
+import { ReactElement, useState } from 'react';
+import { Pagination, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import './styles.css';
 import { ISliderProps } from './types';
+import { LeftArrowIcon, RightArrowIcon } from '../../assets/icons';
 
 function Slider({ datesArr }: ISliderProps): ReactElement {
+  const [, setInit] = useState<boolean>(false);
+
   return (
-    <div>
+    <div className="swiperr">
       <Swiper
         slidesPerView="auto"
         // breakpoints={{
-        //   1024: {
+        //   1440: {
         //     slidesPerView: 1,
         //   },
         // }}
@@ -24,7 +28,12 @@ function Slider({ datesArr }: ISliderProps): ReactElement {
         //   clickable: true,
         // }}
         className="mySwiper"
-        modules={[Pagination]}
+        navigation={{
+          prevEl: '.prev',
+          nextEl: '.next',
+        }}
+        modules={[Pagination, Navigation]}
+        onInit={() => setInit(true)}
       >
         {datesArr.map((item, index) => {
           return (
@@ -37,6 +46,12 @@ function Slider({ datesArr }: ISliderProps): ReactElement {
           );
         })}
       </Swiper>
+      <button className="navigation prev">
+        <LeftArrowIcon color="#3877EE" />
+      </button>
+      <button className="navigation next">
+        <RightArrowIcon color="#3877EE" />
+      </button>
     </div>
   );
 }
