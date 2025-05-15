@@ -15,12 +15,16 @@ function Slider({ datesArr }: ISliderProps): ReactElement {
     <div className="slider">
       <Swiper
         slidesPerView="auto"
-        // breakpoints={{
-        //   1440: {
-        //     slidesPerView: 1,
-        //   },
-        // }}
-        spaceBetween="80px"
+        breakpoints={{
+          320: {
+            spaceBetween: '25px',
+            navigation: false,
+          },
+          1440: {
+            spaceBetween: '80px',
+            navigation: true,
+          },
+        }}
         // pagination={{
         //   type: 'bullets',
         //   bulletClass: 'swiper-custom-bullet',

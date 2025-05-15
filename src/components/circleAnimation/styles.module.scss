@@ -1,9 +1,13 @@
 .circleContainer {
-  position: absolute;
-  top: 215px;
-  left: calc(100% / 2 - 268px);
-  width: 536px;
-  height: 536px;
+  display: none;
+  @media (min-width: 1440px) {
+    display: block;
+    position: absolute;
+    top: 215px;
+    left: calc(100% / 2 - 268px);
+    width: 536px;
+    height: 536px;
+  }
 }
 
 .circle {

@@ -31,24 +31,27 @@ function App(): ReactElement {
       <CircleAnimation setCurrentPeriod={setCurrentPeriod} currentPeriod={currentPeriod} arrLength={mockData.length} />
       <Title />
       <Period currentPeriod={mockData[currentPeriod].period} />
-      <div className={styles.controls}>
-        <p className={styles.block}>
-          {formatPeriod(currentPeriod + 1)}/{formatPeriod(mockData.length)}
-        </p>
-        <div className={styles.btns}>
-          <button onClick={() => handleChangePeriod('decr')} disabled={!currentPeriod} className={styles.btn}>
-            <LeftArrowIcon color="#42567A" disabled={!currentPeriod} />
-          </button>
-          <button
-            onClick={() => handleChangePeriod('incr')}
-            disabled={currentPeriod === mockData.length - 1}
-            className={styles.btn}
-          >
-            <RightArrowIcon color="#42567A" disabled={currentPeriod === mockData.length - 1} />
-          </button>
+      <div className={styles.main__x_mobile} />
+      <div className={styles.swiper}>
+        <div className={styles.controls}>
+          <p className={styles.block}>
+            {formatPeriod(currentPeriod + 1)}/{formatPeriod(mockData.length)}
+          </p>
+          <div className={styles.btns}>
+            <button onClick={() => handleChangePeriod('decr')} disabled={!currentPeriod} className={styles.btn}>
+              <LeftArrowIcon color="#42567A" disabled={!currentPeriod} />
+            </button>
+            <button
+              onClick={() => handleChangePeriod('incr')}
+              disabled={currentPeriod === mockData.length - 1}
+              className={styles.btn}
+            >
+              <RightArrowIcon color="#42567A" disabled={currentPeriod === mockData.length - 1} />
+            </button>
+          </div>
         </div>
+        <Slider datesArr={mockData[currentPeriod].dates} />
       </div>
-      <Slider datesArr={mockData[currentPeriod].dates} />
     </main>
   );
 }
