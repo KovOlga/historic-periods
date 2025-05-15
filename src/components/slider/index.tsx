@@ -25,12 +25,12 @@ function Slider({ datesArr }: ISliderProps): ReactElement {
             navigation: true,
           },
         }}
-        // pagination={{
-        //   type: 'bullets',
-        //   bulletClass: 'swiper-custom-bullet',
-        //   bulletActiveClass: 'swiper-custom-bullet-active',
-        //   clickable: true,
-        // }}
+        pagination={{
+          type: 'bullets',
+          bulletClass: 'swiper-custom-bullet',
+          bulletActiveClass: 'swiper-custom-bullet-active',
+          clickable: true,
+        }}
         className="mySwiper"
         navigation={{
           prevEl: '.prev',

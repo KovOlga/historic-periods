@@ -6,7 +6,7 @@
   flex-direction: column;
   min-height: calc(100dvh + 1px);
   position: relative;
-  padding: 60px 20px 14px 20px;
+  padding: 60px 0px 14px 20px;
   @media (min-width: 1440px) {
     width: 1440px;
     font-size: 56px;
@@ -33,9 +33,11 @@
 
 .main__x_mobile {
   height: 1px;
-  width: 100%;
+  width: 280px;
   background-color: #edf0f3;
   margin-top: 57px;
+  margin-right: 20px;
+  box-sizing: border-box;
   @media (min-width: 1440px) {
     display: none;
   }
