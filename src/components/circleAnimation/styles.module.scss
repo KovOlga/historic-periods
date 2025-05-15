@@ -35,11 +35,17 @@
   opacity: 0;
 }
 
+.number__inactive:hover .circle_number {
+  opacity: 100;
+}
+
 .number__inactive {
   background: #42567a;
   width: 6px;
   height: 6px;
   pointer-events: unset;
+  transition: all;
+  transition-duration: 300ms;
 }
 
 .number__inactive:hover {
@@ -49,11 +55,6 @@
   background: #ffffff;
   border: 1px #303e5880 solid;
 }
-
-.number__inactive:hover .circle_number {
-  opacity: 100;
-}
-
 .number__active {
   width: 56px;
   height: 56px;
