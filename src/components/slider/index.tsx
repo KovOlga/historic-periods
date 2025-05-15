@@ -18,14 +18,13 @@ function Slider({ datesArr }: ISliderProps): ReactElement {
         breakpoints={{
           320: {
             spaceBetween: '25px',
-            navigation: false,
           },
           1440: {
             spaceBetween: '80px',
-            navigation: true,
           },
         }}
         pagination={{
+          el: '.swiper-custom-pagination',
           type: 'bullets',
           bulletClass: 'swiper-custom-bullet',
           bulletActiveClass: 'swiper-custom-bullet-active',
@@ -56,6 +55,7 @@ function Slider({ datesArr }: ISliderProps): ReactElement {
       <button className="navigation next">
         <RightArrowIcon color="#3877EE" />
       </button>
+      <div className="swiper-custom-pagination" />
     </div>
   );
 }
