@@ -1,4 +1,4 @@
-import { Dispatch, ReactElement, SetStateAction, useRef } from 'react';
+import { Dispatch, ReactElement, SetStateAction, useEffect, useRef } from 'react';
 import styles from './styles.module.scss';
 import { gsap } from 'gsap';
 import clsx from 'clsx';
@@ -16,8 +16,7 @@ const CircleAnimation = ({
   const circleRef = useRef(null);
   const angle = 360 / arrLength;
 
-  const handleClick = (index: number): void => {
-    setCurrentPeriod(index);
+  const rotate = (index: number): void => {
     const rotation = angle * index - 210;
     gsap.to(circleRef.current, {
       rotation: -rotation,
@@ -26,6 +25,15 @@ const CircleAnimation = ({
       transformOrigin: '50% 50%',
     });
   };
+
+  const handleClick = (index: number): void => {
+    setCurrentPeriod(index);
+    rotate(index);
+  };
+
+  useEffect(() => {
+    rotate(currentPeriod);
+  }, [currentPeriod]);
 
   return (
     <div className={styles.circleContainer}>
