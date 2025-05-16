@@ -48,6 +48,11 @@
 .swiper-slide-next {
   opacity: 40%;
 }
+@media (min-width: 1440px) {
+  .swiper-slide-next {
+    opacity: 100;
+  }
+}
 
 .swiper-pagination-fraction,
 .swiper-pagination-custom,
@@ -117,7 +122,7 @@
 .slide__content {
   font-weight: 400;
   font-size: 14px;
-  line-height: 30px;
+  line-height: 20px;
   margin: 0;
   color: #42567a;
 }
@@ -125,5 +130,6 @@
 @media (min-width: 1440px) {
   .slide__content {
     font-size: 20px;
+    line-height: 30px;
   }
 }

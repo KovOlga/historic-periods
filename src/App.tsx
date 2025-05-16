@@ -25,9 +25,6 @@ function App(): ReactElement {
   };
   return (
     <main className={styles.main}>
-      <div className={styles.main__x} />
-      <div className={styles.main__y} />
-      <div className={styles.main__circle} />
       <CircleAnimation setCurrentPeriod={setCurrentPeriod} currentPeriod={currentPeriod} arrLength={mockData.length} />
       <Title />
       <Period currentPeriod={mockData[currentPeriod].period} />
@@ -51,6 +48,10 @@ function App(): ReactElement {
           </div>
         </div>
         <Slider datesArr={mockData[currentPeriod].dates} />
+        <div className={styles.main__x} />
+        <div className={styles.main__y} />
+        <div className={styles.main__circle} />
+        <div className={styles.main__left} />
       </div>
     </main>
   );
