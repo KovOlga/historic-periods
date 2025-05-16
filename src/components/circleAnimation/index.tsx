@@ -37,6 +37,7 @@ const CircleAnimation = ({
 
   useEffect(() => {
     rotate(currentPeriod);
+    setCurrentIndx(currentPeriod);
   }, [currentPeriod]);
 
   return (
