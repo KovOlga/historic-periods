@@ -1,0 +1,8 @@
+.arrow {
+  width: 4px;
+  height: 7px;
+  @media (min-width: 1440px) {
+    width: 10px;
+    height: 14px;
+  }
+}
