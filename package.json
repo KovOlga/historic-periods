@@ -24,9 +24,12 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "homepage": "./",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -49,6 +52,7 @@
     "@typescript-eslint/parser": "^8.32.1",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^10.1.5",
+    "gh-pages": "^6.3.0",
     "prettier": "^3.5.3",
     "sass": "^1.88.0",
     "typescript-eslint": "^8.32.1",
