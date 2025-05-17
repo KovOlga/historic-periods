@@ -25,7 +25,12 @@ function App(): ReactElement {
   };
   return (
     <main className={styles.main}>
-      <CircleAnimation setCurrentPeriod={setCurrentPeriod} currentPeriod={currentPeriod} arrLength={mockData.length} />
+      <CircleAnimation
+        currentName={mockData[currentPeriod].name}
+        setCurrentPeriod={setCurrentPeriod}
+        currentPeriod={currentPeriod}
+        arrLength={mockData.length}
+      />
       <Title />
       <Period currentPeriod={mockData[currentPeriod].period} />
       <div className={styles.main__x_mobile} />

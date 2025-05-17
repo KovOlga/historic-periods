@@ -132,4 +132,7 @@
   width: 5px;
   height: 120px;
   background: linear-gradient(180deg, #3877ee -5%, #ef5da8 85%);
+  @media (min-width: 1440px) {
+    display: none;
+  }
 }

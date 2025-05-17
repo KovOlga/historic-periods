@@ -1,23 +1,18 @@
-import { Dispatch, ReactElement, SetStateAction, useEffect, useRef, useState } from 'react';
+import { ReactElement, useEffect, useRef, useState } from 'react';
 import styles from './styles.module.scss';
 import { gsap } from 'gsap';
 import clsx from 'clsx';
 import './style.css';
+import { TCircleAnimationProps } from './types';
 
-const CircleAnimation = ({
-  arrLength,
-  currentPeriod,
-  setCurrentPeriod,
-}: {
-  arrLength: number;
-  currentPeriod: number;
-  setCurrentPeriod: Dispatch<SetStateAction<number>>;
-}): ReactElement => {
+const CircleAnimation = (props: TCircleAnimationProps): ReactElement => {
+  const { arrLength, currentPeriod, currentName, setCurrentPeriod } = props;
   const circleRef = useRef(null);
   const angle = 360 / arrLength;
   const shift = 150;
 
   const [currentIndx, setCurrentIndx] = useState(0);
+  const [currentNameState, setCurrentNameState] = useState('');
 
   const rotate = (index: number): void => {
     const rotation = angle * index + shift;
@@ -26,6 +21,12 @@ const CircleAnimation = ({
       duration: 0.1,
       ease: 'none',
       transformOrigin: '50% 50%',
+      onStart: () => {
+        setCurrentNameState('');
+      },
+      onComplete: () => {
+        setCurrentNameState(currentName);
+      },
     });
   };
 
@@ -56,6 +57,16 @@ const CircleAnimation = ({
               }}
               onClick={() => handleClick(index)}
             >
+              {index === currentPeriod && (
+                <p
+                  style={{
+                    transform: `rotate(${shift - (index - currentIndx) * angle}deg) `,
+                  }}
+                  className={styles.name}
+                >
+                  {currentNameState}
+                </p>
+              )}
               <span
                 style={{
                   transform: `rotate(${shift - (index - currentIndx) * angle}deg) `,

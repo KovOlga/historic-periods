@@ -1,5 +1,6 @@
 export const mockData = [
   {
+    name: 'Наука',
     period: { start: 1992, end: 1997 },
     dates: [
       {
@@ -26,6 +27,7 @@ export const mockData = [
     ],
   },
   {
+    name: 'Книги',
     period: { start: 1999, end: 2004 },
     dates: [
       {
@@ -47,6 +49,7 @@ export const mockData = [
     ],
   },
   {
+    name: 'Литература',
     period: { start: 2004, end: 2009 },
     dates: [
       {
