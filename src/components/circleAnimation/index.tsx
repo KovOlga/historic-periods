@@ -18,7 +18,7 @@ const CircleAnimation = (props: TCircleAnimationProps): ReactElement => {
     const rotation = angle * index + shift;
     gsap.to(circleRef.current, {
       rotation: -rotation,
-      duration: 0.5,
+      duration: 2,
       ease: 'none',
       transformOrigin: 'center center',
       onStart: () => {
@@ -53,12 +53,12 @@ const CircleAnimation = (props: TCircleAnimationProps): ReactElement => {
                 [styles.number__active]: index === currentPeriod,
                 [styles.number__inactive]: index !== currentPeriod,
               })}
+              onClick={() => handleClick(index)}
             >
               <div
                 style={{
                   transform: `rotate(${shift - (index - currentIndx) * angle}deg) `,
                 }}
-                onClick={() => handleClick(index)}
               >
                 {index === currentIndx && <p className={styles.name}>{currentNameState}</p>}
                 <span className={clsx(styles.circle_number, { opacity: index === currentPeriod })}>{index + 1}</span>
