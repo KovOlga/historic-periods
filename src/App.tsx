@@ -1,63 +1,10 @@
-import { ReactElement, useState } from 'react';
-import Title from './components/title';
-import styles from './styles.module.scss';
-import Period from './components/period';
-import { mockData } from './utils/mock';
-import Slider from './components/slider';
-import { LeftArrowIcon, RightArrowIcon } from './assets/icons';
-import { formatPeriod } from './utils/format';
-import CircleAnimation from './components/circleAnimation';
+import { ReactElement } from 'react';
+import PeriodBlock from './components/periodBlock';
 
 function App(): ReactElement {
-  const [currentPeriod, setCurrentPeriod] = useState(0);
-
-  const handleChangePeriod = (type: 'incr' | 'decr'): void => {
-    switch (type) {
-      case 'incr': {
-        setCurrentPeriod((prev) => prev + 1);
-        break;
-      }
-      case 'decr': {
-        setCurrentPeriod((prev) => prev - 1);
-        break;
-      }
-    }
-  };
   return (
-    <main className={styles.main}>
-      <CircleAnimation
-        currentName={mockData[currentPeriod].name}
-        setCurrentPeriod={setCurrentPeriod}
-        currentPeriod={currentPeriod}
-        arrLength={mockData.length}
-      />
-      <Title />
-      <Period currentPeriod={mockData[currentPeriod].period} />
-      <div className={styles.main__x_mobile} />
-      <div className={styles.swiper}>
-        <div className={styles.controls}>
-          <p className={styles.controls__period}>
-            {formatPeriod(currentPeriod + 1)}/{formatPeriod(mockData.length)}
-          </p>
-          <div className={styles.btns}>
-            <button onClick={() => handleChangePeriod('decr')} disabled={!currentPeriod} className={styles.btns__item}>
-              <LeftArrowIcon color="#42567A" disabled={!currentPeriod} />
-            </button>
-            <button
-              onClick={() => handleChangePeriod('incr')}
-              disabled={currentPeriod === mockData.length - 1}
-              className={styles.btns__item}
-            >
-              <RightArrowIcon color="#42567A" disabled={currentPeriod === mockData.length - 1} />
-            </button>
-          </div>
-        </div>
-        <Slider datesArr={mockData[currentPeriod].dates} />
-      </div>
-      <div className={styles.main__x} />
-      <div className={styles.main__y} />
-      <div className={styles.main__circle} />
-      <div className={styles.main__left} />
+    <main>
+      <PeriodBlock />
     </main>
   );
 }
