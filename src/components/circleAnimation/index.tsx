@@ -11,13 +11,19 @@ const CircleAnimation = (props: TCircleAnimationProps): ReactElement => {
   const angle = 360 / arrLength;
   const shift = 150;
 
-  const [currentIndx, setCurrentIndx] = useState(0);
+  const [currentIndx, setCurrentIndx] = useState(-1);
   const [currentNameState, setCurrentNameState] = useState('');
 
   const rotate = (index: number): void => {
-    const rotation = angle * index + shift;
+    const rotation = angle * index;
     gsap.to(circleRef.current, {
       rotation: -rotation,
+      duration: 1,
+      ease: 'none',
+      transformOrigin: 'center center',
+    });
+    gsap.to('.number', {
+      rotation: rotation,
       duration: 1,
       ease: 'none',
       transformOrigin: 'center center',
@@ -28,12 +34,6 @@ const CircleAnimation = (props: TCircleAnimationProps): ReactElement => {
         setCurrentIndx(index);
         setCurrentNameState(currentName);
       },
-    });
-    gsap.to('.number', {
-      rotation: rotation,
-      duration: 1,
-      ease: 'none',
-      transformOrigin: 'center center',
     });
   };
 
@@ -53,7 +53,7 @@ const CircleAnimation = (props: TCircleAnimationProps): ReactElement => {
             <div
               key={index}
               style={{
-                transform: `rotate(${angle * index}deg) translateY(270px)`,
+                transform: `rotate(${angle * index - shift}deg) translateY(270px)`,
               }}
               className={clsx('number', styles.number, {
                 [styles.number__active]: index === currentPeriod,
