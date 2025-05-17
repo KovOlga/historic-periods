@@ -20,7 +20,7 @@ const CircleAnimation = (props: TCircleAnimationProps): ReactElement => {
       rotation: -rotation,
       duration: 0.5,
       ease: 'none',
-      transformOrigin: '50% 50%',
+      transformOrigin: 'center center',
       onStart: () => {
         setCurrentNameState('');
       },
@@ -46,33 +46,23 @@ const CircleAnimation = (props: TCircleAnimationProps): ReactElement => {
           return (
             <div
               key={index}
+              style={{
+                transform: `rotate(${angle * index}deg) translateY(270px)`,
+              }}
               className={clsx(styles.number, {
                 [styles.number__active]: index === currentPeriod,
                 [styles.number__inactive]: index !== currentPeriod,
               })}
-              style={{
-                transform: `rotate(${angle * index}deg) translateY(270px)`,
-              }}
-              onClick={() => handleClick(index)}
             >
-              {index === currentIndx && (
-                <p
-                  style={{
-                    transform: `rotate(${shift - (index - currentIndx) * angle}deg) `,
-                  }}
-                  className={styles.name}
-                >
-                  {currentNameState}
-                </p>
-              )}
-              <span
+              <div
                 style={{
                   transform: `rotate(${shift - (index - currentIndx) * angle}deg) `,
                 }}
-                className={clsx(styles.circle_number, { opacity: index === currentPeriod })}
+                onClick={() => handleClick(index)}
               >
-                {index + 1}
-              </span>
+                {index === currentIndx && <p className={styles.name}>{currentNameState}</p>}
+                <span className={clsx(styles.circle_number, { opacity: index === currentPeriod })}>{index + 1}</span>
+              </div>
             </div>
           );
         })}
