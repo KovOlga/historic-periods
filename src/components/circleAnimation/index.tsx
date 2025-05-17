@@ -18,13 +18,14 @@ const CircleAnimation = (props: TCircleAnimationProps): ReactElement => {
     const rotation = angle * index + shift;
     gsap.to(circleRef.current, {
       rotation: -rotation,
-      duration: 0.1,
+      duration: 0.5,
       ease: 'none',
       transformOrigin: '50% 50%',
       onStart: () => {
         setCurrentNameState('');
       },
       onComplete: () => {
+        setCurrentIndx(index);
         setCurrentNameState(currentName);
       },
     });
@@ -33,12 +34,10 @@ const CircleAnimation = (props: TCircleAnimationProps): ReactElement => {
   const handleClick = (index: number): void => {
     setCurrentPeriod(index);
     rotate(index);
-    setCurrentIndx(index);
   };
 
   useEffect(() => {
     rotate(currentPeriod);
-    setCurrentIndx(currentPeriod);
   }, [currentPeriod]);
 
   return (
@@ -57,7 +56,7 @@ const CircleAnimation = (props: TCircleAnimationProps): ReactElement => {
               }}
               onClick={() => handleClick(index)}
             >
-              {index === currentPeriod && (
+              {index === currentIndx && (
                 <p
                   style={{
                     transform: `rotate(${shift - (index - currentIndx) * angle}deg) `,
