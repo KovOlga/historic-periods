@@ -36,28 +36,28 @@ function App(): ReactElement {
       <div className={styles.main__x_mobile} />
       <div className={styles.swiper}>
         <div className={styles.controls}>
-          <p className={styles.block}>
+          <p className={styles.controls__period}>
             {formatPeriod(currentPeriod + 1)}/{formatPeriod(mockData.length)}
           </p>
           <div className={styles.btns}>
-            <button onClick={() => handleChangePeriod('decr')} disabled={!currentPeriod} className={styles.btn}>
+            <button onClick={() => handleChangePeriod('decr')} disabled={!currentPeriod} className={styles.btns__item}>
               <LeftArrowIcon color="#42567A" disabled={!currentPeriod} />
             </button>
             <button
               onClick={() => handleChangePeriod('incr')}
               disabled={currentPeriod === mockData.length - 1}
-              className={styles.btn}
+              className={styles.btns__item}
             >
               <RightArrowIcon color="#42567A" disabled={currentPeriod === mockData.length - 1} />
             </button>
           </div>
         </div>
         <Slider datesArr={mockData[currentPeriod].dates} />
-        <div className={styles.main__x} />
-        <div className={styles.main__y} />
-        <div className={styles.main__circle} />
-        <div className={styles.main__left} />
       </div>
+      <div className={styles.main__x} />
+      <div className={styles.main__y} />
+      <div className={styles.main__circle} />
+      <div className={styles.main__left} />
     </main>
   );
 }
