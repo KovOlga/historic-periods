@@ -65,8 +65,8 @@ const CircleAnimation = (props: TCircleAnimationProps): ReactElement => {
               })}
               onClick={() => handleClick(index)}
             >
-              {index === currentIndx && <p className={styles.name}>{currentNameState}</p>}
-              <span className={clsx(styles.circle_number, { opacity: index === currentPeriod })}>{index + 1}</span>
+              {index === currentIndx && <p className={styles.number__name}>{currentNameState}</p>}
+              <span className={clsx(styles.number__span, { opacity: index === currentPeriod })}>{index + 1}</span>
             </div>
           );
         })}

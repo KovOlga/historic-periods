@@ -1,3 +1,7 @@
+$blueColor: #42567a;
+$witeColor: #ffffff;
+$darkBlueColor: #303e5880;
+
 .circleContainer {
   display: none;
   @media (min-width: 1440px) {
@@ -31,47 +35,48 @@
   font-weight: 400;
   font-size: 20px;
   line-height: 30px;
+
+  &__active {
+    width: 56px;
+    height: 56px;
+    color: $blueColor;
+    border: 1px $darkBlueColor solid;
+    pointer-events: none;
+    background: $witeColor;
+  }
+
+  &__inactive {
+    background: $blueColor;
+    width: 6px;
+    height: 6px;
+    pointer-events: unset;
+    transition: all;
+    transition-duration: 300ms;
+
+    &:hover {
+      width: 56px;
+      height: 56px;
+      color: $blueColor;
+      background: $witeColor;
+      border: 1px $darkBlueColor solid;
+    }
+  }
+
+  &__name {
+    color: $blueColor;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    position: absolute;
+    left: 76px;
+    margin: 0;
+  }
+
+  &__span {
+    opacity: 0;
+  }
 }
 
-.circle_number {
-  opacity: 0;
-}
-
-.number__inactive:hover .circle_number {
+.number__inactive:hover .number__span {
   opacity: 100;
-}
-
-.number__inactive {
-  background: #42567a;
-  width: 6px;
-  height: 6px;
-  pointer-events: unset;
-  transition: all;
-  transition-duration: 300ms;
-}
-
-.number__inactive:hover {
-  width: 56px;
-  height: 56px;
-  color: #42567a;
-  background: #ffffff;
-  border: 1px #303e5880 solid;
-}
-.number__active {
-  width: 56px;
-  height: 56px;
-  color: #42567a;
-  border: 1px #303e5880 solid;
-  pointer-events: none;
-  background: #ffffff;
-}
-
-.name {
-  color: #42567a;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 30px;
-  position: absolute;
-  left: 76px;
-  margin: 0;
 }
