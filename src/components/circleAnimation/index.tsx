@@ -33,7 +33,6 @@ const CircleAnimation = (props: TCircleAnimationProps): ReactElement => {
 
   const handleClick = (index: number): void => {
     setCurrentPeriod(index);
-    rotate(index);
   };
 
   useEffect(() => {
