@@ -4,7 +4,8 @@ import PeriodBlock from './components/periodBlock';
 function App(): ReactElement {
   return (
     <main>
-      <PeriodBlock />
+      <PeriodBlock uniqueName="first" />
+      {/* <PeriodBlock uniqueName="second" /> */}
     </main>
   );
 }

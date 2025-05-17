@@ -7,8 +7,10 @@ import { LeftArrowIcon, RightArrowIcon } from '../../assets/icons';
 import Slider from '../slider';
 import styles from './styles.module.scss';
 import { mockData } from '../../utils/mock';
+import { IPeriodBlockProps } from './types';
 
-function PeriodBlock(): ReactElement {
+function PeriodBlock(props: IPeriodBlockProps): ReactElement {
+  const { uniqueName } = props;
   const [currentPeriod, setCurrentPeriod] = useState(0);
 
   const handleChangePeriod = (type: 'incr' | 'decr'): void => {
@@ -26,6 +28,7 @@ function PeriodBlock(): ReactElement {
   return (
     <div className={styles.main}>
       <CircleAnimation
+        uniqueName={uniqueName}
         currentName={mockData[currentPeriod].name}
         setCurrentPeriod={setCurrentPeriod}
         currentPeriod={currentPeriod}

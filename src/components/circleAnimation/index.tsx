@@ -6,7 +6,7 @@ import './style.css';
 import { TCircleAnimationProps } from './types';
 
 const CircleAnimation = (props: TCircleAnimationProps): ReactElement => {
-  const { arrLength, currentPeriod, currentName, setCurrentPeriod } = props;
+  const { arrLength, currentPeriod, currentName, uniqueName, setCurrentPeriod } = props;
   const circleRef = useRef(null);
   const angle = 360 / arrLength;
   const shift = 150;
@@ -22,7 +22,7 @@ const CircleAnimation = (props: TCircleAnimationProps): ReactElement => {
       ease: 'none',
       transformOrigin: 'center center',
     });
-    gsap.to('.number', {
+    gsap.to(`.${uniqueName}`, {
       rotation: rotation,
       duration: duration ?? 1,
       ease: 'none',
@@ -59,7 +59,7 @@ const CircleAnimation = (props: TCircleAnimationProps): ReactElement => {
               style={{
                 transform: `rotate(${angle * index - shift}deg) translateY(270px)`,
               }}
-              className={clsx('number', styles.number, {
+              className={clsx(`${uniqueName}`, styles.number, {
                 [styles.number__active]: index === currentPeriod,
                 [styles.number__inactive]: index !== currentPeriod,
               })}
